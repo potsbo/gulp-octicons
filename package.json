@@ -1,0 +1,25 @@
+{
+  "name": "gulp-octicons",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "Insert octicons svg paths into html",
+  "repository": "potsbo/gulp-octicons",
+  "author": {
+    "name": "Shimpei Otsubo",
+    "email": "potsbo@gmail.com"
+  },
+  "keywords": [
+    "gulp",
+    "octicons",
+    "icon",
+    "svg",
+    "path",
+    "inject",
+    "insert"
+  ],
+  "files": [],
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
