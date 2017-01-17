@@ -38,9 +38,7 @@ describe('octicon-replace', () => {
     const str = [strs.open(), strs.close].join('\n')
     const expectedLines = [strs.open(), svg(), strs.close]
     it('should match and replace', () => {
-      const actual = $.octicons.replace(str)
-      const expected = expectedLines.join('\n')
-      expect(actual).to.eql(expected)
+      itShouldReturnInsertedString(str, expectedLines)
     })
     context('when not registered icon specified', () => {
       const open = strs.open({ iconName: 'not-registered-icon-name' })
@@ -64,9 +62,7 @@ describe('octicon-replace', () => {
       const expectedLines = [].concat.apply([], expectedBases)
       const str = comments.join('\n')
       it('should match and replace', () => {
-        const actual = $.octicons.replace(str)
-        const expected = expectedLines.join('\n')
-        expect(actual).to.eql(expected)
+        itShouldReturnInsertedString(str, expectedLines)
       })
     })
   })
