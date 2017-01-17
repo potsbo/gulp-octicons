@@ -69,12 +69,13 @@ describe('gulp-octicons', function() {
   })
 
   describe('pipe', function() {
+    const gulp = require('gulp')
     const gulpOcticons = require('../index')
-    const task = gulp.task('octions', function() {
+    gulp.task('octicons', function() {
       gulp.src('./fixtures/index-source.html')
         .pipe(gulpOcticons())
-        .dest('./dest')
+        .pipe(gulp.dest('./dest'))
     })
-    task.run()
+    gulp.run('octicons')
   })
 })
