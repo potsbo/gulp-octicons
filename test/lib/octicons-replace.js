@@ -51,13 +51,11 @@ describe('octicon-replace', () => {
       itShouldReturnInsertedString(sourceLines, expectedLines)
     })
     context('when not registered icon specified', () => {
-      const open = strs.open({ iconName: 'not-registered-icon-name' })
-      const str = [open, strs.close].join('\n')
-      const expectedLines = [open, strs.close]
+      const sourceLines = linesGen({ open: { iconName: 'not-registered-icon-name' }})
       it('should not insert anything', () => {
-        itShouldReturnInsertedString(str, expectedLines)
+        itShouldReturnInsertedString(sourceLines, sourceLines)
       })
-      describeIndent(str, expectedLines)
+      describeIndent(sourceLines, sourceLines)
     })
     describeIndent(sourceLines, expectedLines)
 
