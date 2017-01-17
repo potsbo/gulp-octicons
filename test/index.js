@@ -72,7 +72,7 @@ describe('gulp-octicons', function() {
     const gulp = require('gulp')
     const gulpOcticons = require('../index')
     gulp.task('octicons', function() {
-      gulp.src('./fixtures/index-source.html')
+      gulp.src('test/fixtures/index-source.html')
         .pipe(gulpOcticons())
         .pipe(gulp.dest('./dest'))
     })
