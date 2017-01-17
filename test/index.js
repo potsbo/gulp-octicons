@@ -77,5 +77,6 @@ describe('gulp-octicons', function() {
         .pipe(gulp.dest('./dest'))
     })
     gulp.run('octicons')
+    it('should render expected html file')
   })
 })
