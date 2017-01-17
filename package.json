@@ -19,7 +19,9 @@
   ],
   "files": [],
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "mocha $(find test -name '*.js')"
+  },
   "dependencies": {
     "octicons": "^5.0.1",
     "through2": "^2.0.3"
