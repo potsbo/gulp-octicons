@@ -4,8 +4,7 @@ const gulpOcticons = require('./lib/gulp-octicons')
 module.exports = function() {
   return through.obj(function(file, enc, callback) {
     if (file.isNull()) {
-      // return empty file
-      return cb(null, file);
+      return callback(null, file)
     }
     if (file.isBuffer()) {
       const contents = String(file.contents)
@@ -16,6 +15,6 @@ module.exports = function() {
       //TODO
     }
 
-    callback(null, file);
+    callback(null, file)
   })
 }
