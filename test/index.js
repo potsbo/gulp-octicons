@@ -1,4 +1,3 @@
-const octicons = require('octicons')
 const chai = require('chai')
 const chaiFiles = require('chai-files')
 chai.use(chaiFiles)
