@@ -74,7 +74,7 @@ describe('gulp-octicons', function() {
     gulp.task('octicons', function() {
       gulp.src('test/fixtures/index-source.html')
         .pipe(gulpOcticons())
-        .pipe(gulp.dest('./dest'))
+        .pipe(gulp.dest('./test/dest'))
     })
     gulp.run('octicons')
     it('should render expected html file')
