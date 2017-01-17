@@ -16,7 +16,7 @@
     "path",
     "inject",
     "insert",
-    "gulpplugin",
+    "gulpplugin"
   ],
   "files": [],
   "license": "MIT",
