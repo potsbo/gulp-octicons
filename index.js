@@ -3,7 +3,19 @@ const gulpOcticons = require('./lib/gulp-octicons')
 
 module.exports = function() {
   return through.obj(function(file, enc, callback) {
-    file.contents = gulpOcticons.replace(file.contents)
-    return callback(null, file);
+    if (file.isNull()) {
+      // return empty file
+      return cb(null, file);
+    }
+    if (file.isBuffer()) {
+      const contents = String(file.contents)
+      const replaced  = gulpOcticons.replace(contents)
+      file.contents = new Buffer(replaced)
+    }
+    if (file.isStream()) {
+      //TODO
+    }
+
+    callback(null, file);
   })
 }
