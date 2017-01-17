@@ -20,7 +20,9 @@
   "files": [],
   "license": "MIT",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "octicons": "^5.0.1"
+  },
   "devDependencies": {
     "chai": "^3.5.0"
   }
