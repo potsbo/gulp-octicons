@@ -1,5 +1,9 @@
-octicon = require('octicons')
-const expect = require('chai').expect
+const octicons = require('octicons')
+const chai = require('chai')
+const chaiFiles = require('chai-files')
+chai.use(chaiFiles)
+const file = chaiFiles.file
+const expect = chai.expect
 $ = {
   octicons: require('../lib/gulp-octicons')
 }
@@ -77,6 +81,10 @@ describe('gulp-octicons', function() {
         .pipe(gulp.dest('./test/dest'))
     })
     gulp.run('octicons')
-    it('should render expected html file')
+    it('should render expected html file', function() {
+      const actual = file('test/dest/index-source.html')
+      const expected = file('test/fixtures/index-expected.html')
+      expect(actual).to.equal(expected)
+    })
   })
 })
