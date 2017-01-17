@@ -21,6 +21,16 @@ describe('gulp-octicons', function() {
       const expected = expectedBase.join('\n')
       expect(actual).to.eql(expected)
     })
+    context('when not registered icon specified', function() {
+      const open = strs.open({ iconName: 'not-registered-icon-name' })
+      const str = [open, strs.close].join('\n')
+      const expectedBase = [open, strs.close]
+      it('should not insert anything', function() {
+        const actual = $.octicons.replace(str)
+        const expected = expectedBase.join('\n')
+        expect(actual).to.eql(expected)
+      })
+    })
     describe('indent', function() {
       it('should insert same indent as openComment', function() {
         const indented = `  ${str}`
