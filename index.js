@@ -1,6 +1,6 @@
 const through = require('through2')
 const gutil = require('gulp-util')
-const gulpOcticons = require('./lib/gulp-octicons')
+const gulpOcticons = require('./lib/octicons-replace')
 
 module.exports = function() {
   return through.obj(function(file, enc, callback) {

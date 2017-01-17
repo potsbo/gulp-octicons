@@ -5,7 +5,7 @@ chai.use(chaiFiles)
 const file = chaiFiles.file
 const expect = chai.expect
 $ = {
-  octicons: require('../lib/gulp-octicons')
+  octicons: require('../lib/octicons-replace')
 }
 
 const strs = {
