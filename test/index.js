@@ -19,19 +19,6 @@ function svg(iconName = 'x') {
   return octicons[iconName].toSVG()
 }
 
-function itShouldHaveCorrectIndent(str, expectedBase) {
-  describe('indent', function() {
-    it('should insert same indent as openComment', function() {
-      const indented = `  ${str}`
-      const actual = $.octicons.replace(indented)
-      const expected = expectedBase.map(function (block) {
-        return `  ${block}`
-      }).join('\n')
-      expect(actual).to.eql(expected)
-    })
-  })
-}
-
 describe('gulp-octicons', function() {
   describe('pipe', function() {
     function itShouldRenderExpectedFile(suffix) {
