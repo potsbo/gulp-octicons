@@ -86,8 +86,13 @@ describe('gulp-octicons', function() {
         .pipe(gulp.dest('./test/dest'))
     })
     gulp.run('octicons')
+
     it('should render expected html file', function() {
       itShouldRenderExpectedFile('basic')
+    })
+
+    it('should respond to more than one octicons', function() {
+      itShouldRenderExpectedFile('multiple')
     })
   })
 })
