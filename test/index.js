@@ -73,18 +73,21 @@ describe('gulp-octicons', function() {
   })
 
   describe('pipe', function() {
+    function itShouldRenderExpectedFile(suffix) {
+      const actual = file(`test/dest/index-${suffix}.html`)
+      const expected = file(`test/expected/index-${suffix}.html`)
+      expect(actual).to.equal(expected)
+    }
     const gulp = require('gulp')
     const gulpOcticons = require('../index')
     gulp.task('octicons', function() {
-      gulp.src('test/fixtures/index-basic.html')
+      gulp.src('test/fixtures/*.html')
         .pipe(gulpOcticons())
         .pipe(gulp.dest('./test/dest'))
     })
     gulp.run('octicons')
     it('should render expected html file', function() {
-      const actual = file('test/dest/index-basic.html')
-      const expected = file('test/fixtures/index-basic.html')
-      expect(actual).to.equal(expected)
+      itShouldRenderExpectedFile('basic')
     })
   })
 })
