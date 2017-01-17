@@ -11,14 +11,17 @@ describe('gulp-octicons', () => {
       const expected = file(`test/expected/index-${suffix}.html`)
       expect(actual).to.equal(expected)
     }
-    const gulp = require('gulp')
-    const gulpOcticons = require('../index')
-    gulp.task('octicons', () => {
-      gulp.src('test/fixtures/*.html')
-        .pipe(gulpOcticons())
-        .pipe(gulp.dest('./test/dest'))
+
+    before((done) => {
+      const gulp = require('gulp')
+      const gulpOcticons = require('../index')
+      gulp.task('octicons', () => {
+        gulp.src('test/fixtures/*.html')
+          .pipe(gulpOcticons())
+          .pipe(gulp.dest('./test/dest'))
+      })
+      gulp.run('octicons', done)
     })
-    gulp.run('octicons')
 
     it('should render expected html file', () => {
       itShouldRenderExpectedFile('basic')
