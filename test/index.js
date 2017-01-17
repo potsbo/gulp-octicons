@@ -4,15 +4,18 @@ $ = {
 }
 
 const strs = {
-  open: '<!-- octicons:x -->',
+  open: function(option = {}){
+    const iconName = option.iconName || 'x'
+    return `<!-- octicons:${iconName} -->`
+  },
   close: '<!-- endocticons -->',
 }
 const svg = require('octicons').x.toSVG()
 
 describe('gulp-octicons', function() {
   describe('replace', function() {
-    const str = [strs.open, strs.close].join('\n')
-    const expectedBase = [strs.open, svg, strs.close]
+    const str = [strs.open(), strs.close].join('\n')
+    const expectedBase = [strs.open(), svg, strs.close]
     it('should match and replace', function() {
       const actual = $.octicons.replace(str)
       const expected = expectedBase.join('\n')
