@@ -83,7 +83,7 @@ describe('gulp-octicons', function() {
     gulp.run('octicons')
     it('should render expected html file', function() {
       const actual = file('test/dest/index-source.html')
-      const expected = file('test/fixtures/index-expected.html')
+      const expected = file('test/fixtures/index-basic.html')
       expect(actual).to.equal(expected)
     })
   })
