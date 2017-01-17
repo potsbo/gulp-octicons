@@ -15,7 +15,8 @@
     "svg",
     "path",
     "inject",
-    "insert"
+    "insert",
+    "gulpplugin",
   ],
   "files": [],
   "license": "MIT",
