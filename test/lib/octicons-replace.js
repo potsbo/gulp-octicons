@@ -61,12 +61,11 @@ describe('octicon-replace', () => {
 
     context('when more than one octions given', () => {
       const arrows = ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-up']
-      const comments = arrows.map((d) => [strs.open({ iconName: d }), strs.close].join('\n'))
+      const sourceLines = arrows.map((d) => [strs.open({ iconName: d }), strs.close].join('\n'))
       const expectedBases = arrows.map((d) => [strs.open({ iconName: d}), svg(d), strs.close])
       const expectedLines = [].concat.apply([], expectedBases)
-      const str = comments.join('\n')
       it('should match and replace', () => {
-        itShouldReturnInsertedString(str, expectedLines)
+        itShouldReturnInsertedString(sourceLines, expectedLines)
       })
     })
   })
