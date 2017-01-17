@@ -4,8 +4,8 @@ $ = {
 }
 
 const strs = {
-  open: '<!-- octicon:icon-name -->',
-  close: '<!-- endocticon -->',
+  open: '<!-- octicons:icon-name -->',
+  close: '<!-- endocticons -->',
 }
 
 describe('gulp-octicons', function() {
