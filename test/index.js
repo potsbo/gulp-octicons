@@ -1,3 +1,4 @@
+octicon = require('octicons')
 const expect = require('chai').expect
 $ = {
   octicons: require('../index')
@@ -10,7 +11,9 @@ const strs = {
   },
   close: '<!-- endocticons -->',
 }
-const svg = require('octicons').x.toSVG()
+function svg(iconName = 'x') {
+  return octicons[iconName].toSVG()
+}
 
 function itShouldHaveCorrectIndent(str, expectedBase) {
   describe('indent', function() {
@@ -28,7 +31,7 @@ function itShouldHaveCorrectIndent(str, expectedBase) {
 describe('gulp-octicons', function() {
   describe('replace', function() {
     const str = [strs.open(), strs.close].join('\n')
-    const expectedBase = [strs.open(), svg, strs.close]
+    const expectedBase = [strs.open(), svg(), strs.close]
     it('should match and replace', function() {
       const actual = $.octicons.replace(str)
       const expected = expectedBase.join('\n')
