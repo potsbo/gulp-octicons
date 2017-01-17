@@ -13,7 +13,7 @@ describe('gulp-octicons', function() {
     const str = [strs.open, strs.close].join('\n')
     it('should match and replace', function() {
       const actual = $.octicons.replace(str)
-      const expected = "<!-- octicon:icon-name -->\nicon-name.path\n<!-- endocticon -->"
+      const expected = [strs.open, 'icon-name.path', strs.close].join('\n')
       expect(actual).to.eql(expected)
     })
     describe('indent', function() {
