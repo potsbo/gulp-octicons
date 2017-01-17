@@ -29,6 +29,12 @@ function itShouldHaveCorrectIndent(str, expectedLines) {
 
 describe('octicon-replace', () => {
   describe('replace', () => {
+    function itShouldReturnInsertedString(source, expectedLines) {
+      const actual = $.octicons.replace(source)
+      const expected = expectedLines.join('\n')
+      expect(actual).to.eql(expected)
+    }
+
     const str = [strs.open(), strs.close].join('\n')
     const expectedLines = [strs.open(), svg(), strs.close]
     it('should match and replace', () => {
@@ -41,9 +47,7 @@ describe('octicon-replace', () => {
       const str = [open, strs.close].join('\n')
       const expectedLines = [open, strs.close]
       it('should not insert anything', () => {
-        const actual = $.octicons.replace(str)
-        const expected = expectedLines.join('\n')
-        expect(actual).to.eql(expected)
+        itShouldReturnInsertedString(str, expectedLines)
       })
       itShouldHaveCorrectIndent(str, expectedLines)
     })
