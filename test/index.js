@@ -12,7 +12,7 @@ const strs = {
 }
 const svg = require('octicons').x.toSVG()
 
-function indentTest(str, expectedBase) {
+function itShouldHaveCorrectIndent(str, expectedBase) {
   describe('indent', function() {
     it('should insert same indent as openComment', function() {
       const indented = `  ${str}`
@@ -43,8 +43,8 @@ describe('gulp-octicons', function() {
         const expected = expectedBase.join('\n')
         expect(actual).to.eql(expected)
       })
-      indentTest(str, expectedBase)
+      itShouldHaveCorrectIndent(str, expectedBase)
     })
-    indentTest(str, expectedBase)
+    itShouldHaveCorrectIndent(str, expectedBase)
   })
 })
