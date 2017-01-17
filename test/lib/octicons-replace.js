@@ -27,7 +27,7 @@ function itShouldHaveCorrectIndent(str, expectedBase) {
   })
 }
 
-describe('gulp-octicons', () => {
+describe('octicon-replace', () => {
   describe('replace', () => {
     const str = [strs.open(), strs.close].join('\n')
     const expectedBase = [strs.open(), svg(), strs.close]
