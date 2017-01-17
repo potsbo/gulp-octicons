@@ -47,9 +47,12 @@ describe('octicon-replace', () => {
 
     const sourceLines = linesGen()
     const expectedLines = linesGen({ body: svg() })
+
     it('should match and replace', () => {
       itShouldReturnInsertedString(sourceLines, expectedLines)
     })
+    describeIndent(sourceLines, expectedLines)
+
     context('when not registered icon specified', () => {
       const sourceLines = linesGen({ open: { iconName: 'not-registered-icon-name' }})
       it('should not insert anything', () => {
@@ -57,7 +60,6 @@ describe('octicon-replace', () => {
       })
       describeIndent(sourceLines, sourceLines)
     })
-    describeIndent(sourceLines, expectedLines)
 
     context('when more than one octions given', () => {
       const arrows = ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-up']
