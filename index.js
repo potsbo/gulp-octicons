@@ -1,6 +1,6 @@
 const through = require('through2')
 const gutil = require('gulp-util')
-const gulpOcticons = require('./lib/octicons-replace')
+const octiconsReplace = require('./lib/octicons-replace')
 
 module.exports = function() {
   return through.obj(function(file, enc, callback) {
@@ -9,7 +9,7 @@ module.exports = function() {
     }
     if (file.isBuffer()) {
       const contents = String(file.contents)
-      const replaced = gulpOcticons.replace(contents)
+      const replaced = octiconsReplace.replace(contents)
       file.contents = new Buffer(replaced)
     }
     if (file.isStream()) {
