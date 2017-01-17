@@ -1,7 +1,7 @@
 octicon = require('octicons')
 const expect = require('chai').expect
 $ = {
-  octicons: require('../index')
+  octicons: require('../lib/gulp-octicons')
 }
 
 const strs = {
