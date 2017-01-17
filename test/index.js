@@ -15,12 +15,10 @@ describe('gulp-octicons', () => {
     before((done) => {
       const gulp = require('gulp')
       const gulpOcticons = require('../index')
-      gulp.task('octicons', () => {
-        gulp.src('test/fixtures/*.html')
-          .pipe(gulpOcticons())
-          .pipe(gulp.dest('./test/dest'))
-      })
-      gulp.run('octicons', done)
+      gulp.src('test/fixtures/*.html')
+        .pipe(gulpOcticons())
+        .pipe(gulp.dest('./test/dest'))
+        .on('end', done)
     })
 
     it('should render expected html file', () => {
