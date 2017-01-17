@@ -76,13 +76,13 @@ describe('gulp-octicons', function() {
     const gulp = require('gulp')
     const gulpOcticons = require('../index')
     gulp.task('octicons', function() {
-      gulp.src('test/fixtures/index-source.html')
+      gulp.src('test/fixtures/index-basic.html')
         .pipe(gulpOcticons())
         .pipe(gulp.dest('./test/dest'))
     })
     gulp.run('octicons')
     it('should render expected html file', function() {
-      const actual = file('test/dest/index-source.html')
+      const actual = file('test/dest/index-basic.html')
       const expected = file('test/fixtures/index-basic.html')
       expect(actual).to.equal(expected)
     })
