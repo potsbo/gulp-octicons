@@ -9,7 +9,7 @@ module.exports = function() {
     }
     if (file.isBuffer()) {
       const contents = String(file.contents)
-      const replaced  = gulpOcticons.replace(contents)
+      const replaced = gulpOcticons.replace(contents)
       file.contents = new Buffer(replaced)
     }
     if (file.isStream()) {
