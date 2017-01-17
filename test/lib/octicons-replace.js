@@ -34,7 +34,7 @@ describe('octicon-replace', () => {
       expect(actual).to.eql(expected)
     }
 
-    function itShouldHaveCorrectIndent(source, expectedLines) {
+    function describeIndent(source, expectedLines) {
       describe('indent', () => {
         it('should insert same indent as openComment', () => {
           const str = source instanceof Array ? source.join("\n") : source
@@ -57,9 +57,9 @@ describe('octicon-replace', () => {
       it('should not insert anything', () => {
         itShouldReturnInsertedString(str, expectedLines)
       })
-      itShouldHaveCorrectIndent(str, expectedLines)
+      describeIndent(str, expectedLines)
     })
-    itShouldHaveCorrectIndent(sourceLines, expectedLines)
+    describeIndent(sourceLines, expectedLines)
 
     context('when more than one octions given', () => {
       const arrows = ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-up']
