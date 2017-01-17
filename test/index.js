@@ -12,6 +12,13 @@ const strs = {
 }
 const svg = require('octicons').x.toSVG()
 
+function indentTest(str, expectedBase) {
+  const indented = `  ${str}`
+  const actual = $.octicons.replace(indented)
+  const expected = expectedBase.map(function(block){ return `  ${block}`}).join('\n')
+  expect(actual).to.eql(expected)
+}
+
 describe('gulp-octicons', function() {
   describe('replace', function() {
     const str = [strs.open(), strs.close].join('\n')
@@ -33,10 +40,7 @@ describe('gulp-octicons', function() {
     })
     describe('indent', function() {
       it('should insert same indent as openComment', function() {
-        const indented = `  ${str}`
-        const actual = $.octicons.replace(indented)
-        const expected = expectedBase.map(function(block){ return `  ${block}`}).join('\n')
-        expect(actual).to.eql(expected)
+        indentTest(str, expectedBase)
       })
     })
   })
