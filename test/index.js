@@ -4,20 +4,6 @@ const chaiFiles = require('chai-files')
 chai.use(chaiFiles)
 const file = chaiFiles.file
 const expect = chai.expect
-$ = {
-  octicons: require('../lib/octicons-replace')
-}
-
-const strs = {
-  open: function(option = {}){
-    const iconName = option.iconName || 'x'
-    return `<!-- octicons:${iconName} -->`
-  },
-  close: '<!-- endocticons -->',
-}
-function svg(iconName = 'x') {
-  return octicons[iconName].toSVG()
-}
 
 describe('gulp-octicons', function() {
   describe('pipe', function() {
