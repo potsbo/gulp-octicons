@@ -16,12 +16,12 @@ const svg = (iconName = 'x') => {
   return octicons[iconName].toSVG()
 }
 
-function itShouldHaveCorrectIndent(str, expectedBase) {
+function itShouldHaveCorrectIndent(str, expectedLines) {
   describe('indent', () => {
     it('should insert same indent as openComment', () => {
       const indented = `  ${str}`
       const actual = $.octicons.replace(indented)
-      const expected = expectedBase.map((block) => `  ${block}`).join('\n')
+      const expected = expectedLines.map((block) => `  ${block}`).join('\n')
       expect(actual).to.eql(expected)
     })
   })
@@ -30,24 +30,24 @@ function itShouldHaveCorrectIndent(str, expectedBase) {
 describe('octicon-replace', () => {
   describe('replace', () => {
     const str = [strs.open(), strs.close].join('\n')
-    const expectedBase = [strs.open(), svg(), strs.close]
+    const expectedLines = [strs.open(), svg(), strs.close]
     it('should match and replace', () => {
       const actual = $.octicons.replace(str)
-      const expected = expectedBase.join('\n')
+      const expected = expectedLines.join('\n')
       expect(actual).to.eql(expected)
     })
     context('when not registered icon specified', () => {
       const open = strs.open({ iconName: 'not-registered-icon-name' })
       const str = [open, strs.close].join('\n')
-      const expectedBase = [open, strs.close]
+      const expectedLines = [open, strs.close]
       it('should not insert anything', () => {
         const actual = $.octicons.replace(str)
-        const expected = expectedBase.join('\n')
+        const expected = expectedLines.join('\n')
         expect(actual).to.eql(expected)
       })
-      itShouldHaveCorrectIndent(str, expectedBase)
+      itShouldHaveCorrectIndent(str, expectedLines)
     })
-    itShouldHaveCorrectIndent(str, expectedBase)
+    itShouldHaveCorrectIndent(str, expectedLines)
 
     context('when more than one octions given', () => {
       const arrows = ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-up']
@@ -57,11 +57,11 @@ describe('octicon-replace', () => {
       const expectedBases = arrows.map((d) => {
         return [strs.open({ iconName: d}), svg(d), strs.close]
       })
-      const expectedBase = [].concat.apply([], expectedBases)
+      const expectedLines = [].concat.apply([], expectedBases)
       const str = comments.join('\n')
       it('should match and replace', () => {
         const actual = $.octicons.replace(str)
-        const expected = expectedBase.join('\n')
+        const expected = expectedLines.join('\n')
         expect(actual).to.eql(expected)
       })
     })
