@@ -13,8 +13,8 @@ before_install:
 install:
   - yarn
 before_script:
-  - yarn add -g gulp
-  - yarn add -g mocha
+  - yarn global add gulp
+  - yarn global add mocha
 script:
   - yarn test
 cache:
