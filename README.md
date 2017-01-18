@@ -57,6 +57,7 @@ gulp.task('octicons', function() {
 
 - [ ] Take options that octions do
 - [ ] Other formats
+- [ ] Support Node 4 and 5
 
 ## License
 
