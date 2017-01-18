@@ -18,7 +18,10 @@
     "insert",
     "gulpplugin"
   ],
-  "files": [],
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "license": "MIT",
   "scripts": {
     "test": "mocha $(find test -name '*.js')"
