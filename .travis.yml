@@ -12,6 +12,7 @@ before_install:
   - sudo apt-get install -y -qq yarn
 install:
   - yarn
+before_script:
   - yarn add -g gulp
   - yarn add -g mocha
 script:
