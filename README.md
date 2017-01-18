@@ -17,6 +17,7 @@ use special comments as below.
 ```
 
 Icon svg rendered with `octiocns.__icon_name__.toSVG()` will be inserted.
+See [this section](https://github.com/primer/octicons/#octiconsalerttosvg) for more detail about `toSVG()`.
 
 
 ### Example
@@ -27,7 +28,7 @@ var octicons = require('gulp-octicons');
 
 gulp.task('octicons', function() {
   gulp.src("src/*.html")
-    .pipe(Octicons())
+    .pipe(octicons())
     .pipe(gulp.dest('dest'))
 });
 ```
