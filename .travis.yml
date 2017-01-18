@@ -1,20 +1,23 @@
 language: node_js
 node_js:
-  - "6"
-  - "node"
+- '6'
+- node
 sudo: required
 before_install:
-  - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
-  - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  - sudo apt-get update -qq
-  - sudo apt-get install -y -qq yarn
+- sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
+- echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+- sudo apt-get update -qq
+- sudo apt-get install -y -qq yarn
 install:
-  - yarn
+- yarn
 before_script:
-  - yarn global add gulp
-  - yarn global add mocha
+- yarn global add gulp
+- yarn global add mocha
 script:
-  - yarn test
+- yarn test
 cache:
   directories:
-    - $HOME/.cache/yarn
+  - "$HOME/.cache/yarn"
+deploy:
+  api_key:
+    secure: AqE+IGZd7/q+Y6vFpJ2NETye3uyLzIjxMiCIMxD2mya6uuQ77QbejUwe4V6qCC9OvHRXsHAPrxLBEcri2hinI4zpAphVBW8T3ImthfJiOMjWILnidBijAc0LFp4GQWI8xOwqKRqVmH+LzaVog4fO/GPUcItQT9uiGOHCsn6DRDS4svfjs/jfUjdMFmHsGcXcPEZSPx2+TT7k7esYVzhDLMqTXgrw3FW7K5fi3xO1GqU4jdUWaQ5V3md2gtHnUtUfdp9YNe+JIhyzdcJF71FnOyjy8IeLAnUqbKpgfzjVnAbD23N5BMabcvrvdsPzpjUJkt68LDhUJaymGAfjA6m+/busqVGiC5Fhe7r6vv26KNCNTADLY2tB7C+2eyce33RJbtdXb8d0m1gFrebSiTLCFd/qx+N+gMiWVh2SetKxbgj4hbHgWnr8qO03eN8BOGsFDT7MkQplm2xD4h+k1ouy1qWgRBeJtLS7C81DsxsDZqexD1nTLo9Eg78NZyNjdFu27Ov6q+aUVLfr2hwYvKk8TyZpyrsaaqr9Yri8+nO1Mxw/xT98OnjsSGZRJhDzwmBFnVRqJ7s1V9a6pp/Kc9ab0k8G+it7TQz+xBroiygUxUpgmp2hz06iz1cfc1yK9e6UudqUbfxEw7etXRn+WILYhLT9F6y9973rGLwmVu4XgXs=
