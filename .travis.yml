@@ -20,6 +20,7 @@ cache:
   - "$HOME/.cache/yarn"
 deploy:
   provider: npm
+  email: potsbo@gmail.com
   on:
     tags: true
     branch: master
