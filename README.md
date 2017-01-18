@@ -1,6 +1,6 @@
 # gulp-octicons
 Insert [octiocns](https://github.com/primer/octicons/) svg path into html file.
-You can see icons that you can insert at [this page](https://octicons.github.com/)
+You can see icons that you can insert at [this page](https://octicons.github.com/).
 
 ## Install
 ```shell
@@ -16,7 +16,7 @@ use special comments as below.
 <!-- endocticons -->
 ```
 
-Icon svg rendered with `[octiocns](https://github.com/primer/octicons/).__icon_name__.toSVG()` will be inserted.
+Icon svg rendered with `octiocns.__icon_name__.toSVG()` will be inserted.
 
 
 ### Example
