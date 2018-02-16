@@ -27,7 +27,7 @@
     "test": "mocha $(find test -name '*.js')"
   },
   "dependencies": {
-    "octicons": "^5.0.1",
+    "octicons": "^7.1.0",
     "through2": "^2.0.3"
   },
   "devDependencies": {
