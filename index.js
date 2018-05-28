@@ -1,5 +1,5 @@
 const through = require('through2')
-const gutil = require('gulp-util')
+const PluginError = require('plugin-error')
 const octiconsReplace = require('./lib/octicons-replace')
 
 module.exports = function() {
@@ -13,7 +13,7 @@ module.exports = function() {
       file.contents = new Buffer(replaced)
     }
     if (file.isStream()) {
-      this.emit('error', new gutil.PluginError('gulp-octicons', 'Streaming not supported'))
+      this.emit('error', new PluginError('gulp-octicons', 'Streaming not supported'))
       return callback()
     }
 

@@ -28,12 +28,12 @@
   },
   "dependencies": {
     "octicons": "^7.1.0",
+    "plugin-error": "^1.0.1",
     "through2": "^2.0.3"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-files": "^1.4.0",
-    "gulp": "^3.9.1",
-    "gulp-util": "^3.0.8"
+    "gulp": "^3.9.1"
   }
 }
